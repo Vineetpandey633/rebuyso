@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ReBuySo | Complete Scrap, Buyback & Recycling Solutions</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins',sans-serif;
+    }
+    html{
+      scroll-behavior:smooth;
+    }
+    body{
+      background:#f7f9fb;
+      color:#333;
+      line-height:1.6;
+    }
+    header{
+      position:fixed;
+      width:100%;
+      top:0;
+      left:0;
+      background:#0d6b3d;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:12px 8%;
+      z-index:1000;
+      box-shadow:0 5px 15px rgba(0,0,0,.15);
+    }
+    
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      text-decoration: none;
+    }
+    .logo-img-wrap {
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .logo-img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+    .logo-text-block {
+      display: flex;
+      flex-direction: column;
+    }
+    .logo-title {
+      color: #fff;
+      font-size: 28px;
+      font-weight: 700;
+      line-height: 1.1;
+    }
+    .logo-title span {
+      color: #1fd46d;
+    }
+    .logo-tagline {
+      font-size: 11px;
+      font-weight: 400;
+      color: #c9f7d8;
+      letter-spacing: 0.5px;
+      margin-top: 2px;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+    }
+    nav a{
+      color:#fff;
+      text-decoration:none;
+      margin-left:25px;
+      font-weight:500;
+      transition:.3s;
+    }
+    nav a:hover{
+      color:#9df2b6;
+    }
+    
+    nav a.nav-btn {
+      background: #1fd46d;
+      padding: 8px 20px;
+      border-radius: 50px;
+      font-weight: 600;
+      box-shadow: 0 4px 10px rgba(31, 212, 109, 0.2);
+    }
+    nav a.nav-btn:hover {
+      background: #15b358;
+      color: white;
+    }
+
+    .hero{
+      min-height:100vh;
+      background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
+      url("https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1600&q=80");
+      background-size:cover;
+      background-position:center;
+      display:flex;
+      align-items:center;
+      padding:120px 8%;
+      color:white;
+    }
+    .hero-content{
+      max-width:700px;
+    }
+    .hero h1{
+      font-size:60px;
+      margin-bottom:20px;
+      line-height:1.2;
+    }
+    .hero p{
+      font-size:20px;
+      margin-bottom:35px;
+    }
+    .btn{
+      display:inline-block;
+      padding:15px 35px;
+      margin-right:15px;
+      border-radius:50px;
+      text-decoration:none;
+      font-weight:600;
+      transition:.3s;
+    }
+    .btn-primary{
+      background:#1fd46d;
+      color:white;
+    }
+    .btn-primary:hover{
+      background:#15b358;
+    }
+    .btn-secondary{
+      border:2px solid white;
+      color:white;
+    }
+    .btn-secondary:hover{
+      background:white;
+      color:#0d6b3d;
+    }
+    section{
+      padding:80px 8%;
+    }
+    .section-title{
+      text-align:center;
+      margin-bottom:50px;
+    }
+    .section-title h2{
+      color:#0d6b3d;
+      font-size:40px;
+      margin-bottom:10px;
+    }
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:25px;
+    }
+    .card{
+      background:white;
+      border-radius:15px;
+      padding:30px;
+      box-shadow:0 10px 25px rgba(0,0,0,.08);
+      transition:.3s;
+    }
+    .card:hover{
+      transform:translateY(-8px);
+    }
+    .card h3{
+      color:#0d6b3d;
+      margin-bottom:15px;
+    }
+    .process{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:25px;
+    }
+    .step{
+      background:white;
+      border-radius:15px;
+      padding:30px;
+      text-align:center;
+      box-shadow:0 8px 20px rgba(0,0,0,.08);
+    }
+    .step span{
+      display:inline-block;
+      width:60px;
+      height:60px;
+      line-height:60px;
+      border-radius:50%;
+      background:#0d6b3d;
+      color:white;
+      font-size:24px;
+      margin-bottom:20px;
+      font-weight:bold;
+    }
+    .cta{
+      background:#0d6b3d;
+      color:white;
+      text-align:center;
+      padding:90px 8%;
+    }
+    .cta h2{
+      font-size:42px;
+      margin-bottom:20px;
+    }
+    
+    .faq-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .faq-item {
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,.04);
+    }
+    .faq-item h3 {
+      color: #0d6b3d;
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+    .faq-item p {
+      color: #555;
+      font-size: 15px;
+    }
+
+    .contact{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:40px;
+    }
+    input, textarea{
+      width:100%;
+      padding:14px;
+      margin-bottom:15px;
+      border:1px solid #ccc;
+      border-radius:8px;
+      font-size:15px;
+    }
+    button{
+      background:#0d6b3d;
+      color:white;
+      border:none;
+      padding:15px 30px;
+      border-radius:8px;
+      cursor:pointer;
+      font-size:16px;
+    }
+    button:hover{
+      background:#0b5a34;
+    }
+    footer{
+      background:#111;
+      color:#ddd;
+      text-align:center;
+      padding:30px;
+    }
+    @media(max-width:768px){
+      .hero h1{
+        font-size:40px;
+      }
+      nav{
+        display:none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+    <a href="#" class="logo-container">
+        <div class="logo-img-wrap">
+            <img src="image_0c5df2.png" alt="ReBuySo Logo" class="logo-img">
+        </div>
+        <div class="logo-text-block">
+            <div class="logo-title">ReBuy<span>So</span></div>
+            <div class="logo-tagline">New, Buyback &amp; Recycling Solutions</div>
+        </div>
+    </a>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#services">Services</a>
+        <a href="#buyback">Buy Back</a>
+        <a href="#process">Process</a>
+        <a href="#contact">Contact</a>
+        <a href="#contact" class="nav-btn">Get Free Quote</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <div class="hero-content">
+        <h1>Complete Scrap, Buyback &amp; Recycling Solutions</h1>
+        <h2 style="color:#1fd46d; font-size:30px; font-weight:600; margin:20px 0;">
+            New, Buyback &amp; Recycling Solutions
+        </h2>
+        <p>
+            ReBuySo provides complete asset lifecycle solutions for businesses and individuals.
+            We specialize in new product supply, buyback programs, scrap collection, industrial waste
+            management, e-waste recycling, and sustainable recycling solutions.
+            Our mission is to maximize asset value while promoting a greener future.
+        </p>
+        <div style="margin-top:35px;">
+            <a href="#contact" class="btn btn-primary">Request Pickup</a>
+            <a href="#services" class="btn btn-secondary">Explore Services</a>
+        </div>
+    </div>
+</section>
+
+<section id="services">
+    <div class="section-title">
+        <h2>Our Services</h2>
+        <p>End-to-end recycling and buyback solutions.</p>
+    </div>
+    <div class="cards">
+        <div class="card">
+            <h3>Metal Scrap</h3>
+            <p>Ferrous and non-ferrous scrap collection with competitive market pricing.</p>
+        </div>
+        <div class="card">
+            <h3>E-Waste Recycling</h3>
+            <p>Laptops, desktops, servers, networking equipment, printers and electronics.</p>
+        </div>
+        <div class="card">
+            <h3>Industrial Scrap</h3>
+            <p>Factory scrap, machinery, warehouse clearance and industrial waste management.</p>
+        </div>
+        <div class="card">
+            <h3>Battery Recycling</h3>
+            <p>Safe disposal and eco-friendly processing of lead-acid, lithium-ion, and industrial UPS batteries.</p>
+        </div>
+        <div class="card">
+            <h3>Plastic Scrap</h3>
+            <p>Bulk collection and sustainable recycling processing for commercial and industrial plastics.</p>
+        </div>
+        <div class="card">
+            <h3>Paper & Cardboard</h3>
+            <p>Efficient management of bulk office archives, packaging waste, and manufacturing paper scrap.</p>
+        </div>
+        <div class="card">
+            <h3>Buyback Services</h3>
+            <p>Used IT assets, office furniture, machinery, equipment and electronics.</p>
+        </div>
+        <div class="card">
+            <h3>Doorstep Pickup</h3>
+            <p>Fast pickup service for homes, offices, warehouses and factories.</p>
+        </div>
+        <div class="card">
+            <h3>Sustainability Solutions</h3>
+            <p>Helping businesses achieve responsible recycling and waste reduction.</p>
+        </div>
+    </div>
+</section>
+
+<section id="buyback" style="background:#eef9f2;">
+    <div class="section-title">
+        <h2>Items We Buy Back</h2>
+        <p>We source, evaluate, and purchase bulk categories directly from businesses and homes.</p>
+    </div>
+    <div class="cards">
+        <div class="card">
+            <h3>IT & Electronic Assets</h3>
+            <p>• Laptops & Desktop PCs</p>
+            <p>• Datacenter Servers & Racks</p>
+            <p>• Networking Equipment</p>
+            <p>• Mobile Phones & Tablets</p>
+        </div>
+        <div class="card">
+            <h3>Industrial & Structural Scrap</h3>
+            <p>• Ferrous & Non-Ferrous Metals</p>
+            <p>• Bulk Manufacturing Plastics</p>
+            <p>• Factory Machinery & Heavy Tooling</p>
+            <p>• Electrical Equipment & Wiring</p>
+        </div>
+        <div class="card">
+            <h3>Commercial & Power Surplus</h3>
+            <p>• Industrial Batteries (Lead-Acid / Li-ion)</p>
+            <p>• Central UPS Systems & Generators</p>
+            <p>• Commercial Office Furniture</p>
+            <p>• Bulk Paper & Cardboard Archives</p>
+        </div>
+    </div>
+</section>
+
+<section id="process">
+    <div class="section-title">
+        <h2>How It Works</h2>
+        <p>Our simple four-step process for fast evaluations and sustainable disposal.</p>
+    </div>
+    <div class="process">
+        <div class="step">
+            <span>1</span>
+            <h3>Schedule Request</h3>
+            <p>Submit your inventory online or call us to book a pickup request.</p>
+        </div>
+        <div class="step">
+            <span>2</span>
+            <h3>Expert Evaluation</h3>
+            <p>Our team provides transparent, market-linked appraisals for your materials.</p>
+        </div>
+        <div class="step">
+            <span>3</span>
+            <h3>Instant Payout</h3>
+            <p>Receive your secure, full digital payment upon evaluation confirmation.</p>
+        </div>
+        <div class="step">
+            <span>4</span>
+            <h3>Eco-Friendly Handling</h3>
+            <p>Assets undergo certified data destruction or green recycling loops.</p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="section-title">
+        <h2>Why Choose ReBuySo?</h2>
+    </div>
+    <div class="cards">
+        <div class="card"><h3>Best Market Prices</h3></div>
+        <div class="card"><h3>Free Doorstep Pickup</h3></div>
+        <div class="card"><h3>Secure Payments</h3></div>
+        <div class="card"><h3>Certified Recycling</h3></div>
+        <div class="card"><h3>Residential & Corporate Services</h3></div>
+        <div class="card"><h3>Fast Response</h3></div>
+    </div>
+</section>
+
+<!-- --- UPDATED FAQ SECTION --- -->
+<section style="background:#eef9f2;">
+    <div class="section-title">
+        <h2>Frequently Asked Questions</h2>
+        <p>Everything you need to know about our buyback and recycling loops.</p>
+    </div>
+    <div class="faq-container">
+        <div class="faq-item">
+            <h3>How do you calculate asset rates?</h3>
+            <p>We evaluate your scrap items or used electronics based on current global commodity spot markets and system operational conditions to give you top market value.</p>
+        </div>
+        <div class="faq-item">
+            <h3>Is my corporate data secure during IT buybacks?</h3>
+            <p>Yes, absolutely. All electronics with data storage undergo strict data sanitization or physical destruction compliance processing cycles before being recycled or resold.</p>
+        </div>
+        <div class="faq-item">
+            <h3>Is there a pickup charge or minimum weight requirement?</h3>
+            <p>Doorstep collection is completely free for all verified corporate and industrial lots. For residential pickups, minimum quantity thresholds vary based on your specific location parameters.</p>
+        </div>
+        <div class="faq-item">
+            <h3>How fast do I receive payments and compliance documents?</h3>
+            <p>Payments are cleared instantly via electronic fund transfers immediately after final physical valuation confirmation. Green recycling certifications and audit summaries follow within 48-72 business hours.</p>
+        </div>
+    </div>
+</section>
+
+<section class="cta">
+    <h2>Maximize Resource Value & Sustainability</h2>
+    <p style="margin-bottom:30px;">
+        Partner with ReBuySo to convert your corporate surplus, electronic waste, and industrial scrap into sustainable returns.
+    </p>
+    <a href="#contact" class="btn btn-primary">Get Free Quote</a>
+</section>
+
+<section id="contact">
+    <div class="section-title">
+        <h2>Contact Us</h2>
+        <p>We'd love to hear from you.</p>
+    </div>
+    <div class="contact">
+        <div>
+            <h3 style="margin-bottom:20px;color:#0d6b3d;">ReBuySo.com</h3>
+            <p><strong>Phone:</strong> +91 XXXXX XXXXX</p>
+            <p><strong>Email:</strong> info@rebuyso.com</p>
+            <p><strong>Website:</strong> www.rebuyso.com</p>
+            <p><strong>Service Area:</strong> PAN India</p>
+        </div>
+        <div>
+            <form>
+                <input type="text" placeholder="Your Name">
+                <input type="email" placeholder="Email Address">
+                <input type="tel" placeholder="Phone Number">
+                <textarea rows="5" placeholder="Tell us about your scrap or equipment"></textarea>
+                <button type="submit">Request Pickup</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <h3 style="margin-bottom:10px;">ReBuySo.com</h3>
+    <p style="font-size:18px; color:#1fd46d;">New, Buyback &amp; Recycling Solutions</p>
+    <br>
+    <p>&copy; 2026 ReBuySo.com. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
